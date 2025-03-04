@@ -1,0 +1,26 @@
+using UnityEngine;
+
+public class Speed : MonoBehaviour
+{
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // ...existing code...
+    }
+
+    public float speedBoost = 2f;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+        rb.linearVelocity *= speedBoost;
+        Debug.Log("Speed boost applied to " + other.name);
+        // ...existing code...
+    }
+}
